@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ArrayListExample {
+
+    public static void main(String[] args) {
+        // Create an ArrayList of strings
+        ArrayList<String> stringList = new ArrayList<>();
+        stringList.add("Apple");
+        stringList.add("Banana");
+        stringList.add("Cherry");
+        stringList.add("Date");
+        stringList.add("Fig");
+
+        System.out.println("Task 1: Iterate and print string with length");
+        iterateAndPrint(stringList);
+        removeShortStrings(stringList);
+        
+        System.out.println("\nTask 3: Modified ArrayList");
+        iterateAndPrint(stringList);
+    }
+    
+    private static void iterateAndPrint(ArrayList<String> list) {
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            String str = iterator.next();
+            System.out.println(str + " - Length: " + str.length());
+        }
+    }
+    private static void removeShortStrings(ArrayList<String> list) {
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            String str = iterator.next();
+            if (str.length() <= 3) {
+                iterator.remove();
+            }
+        }
+    }
+}
+
+
+OUTPUT:
+Task 1: Iterate and print string with length
+Apple - Length: 5
+Banana - Length: 6
+Cherry - Length: 6
+Date - Length: 4
+Fig - Length: 3
+
+Task 3: Modified ArrayList
+Apple - Length: 5
+Banana - Length: 6
+Cherry - Length: 6
+Date - Length: 4
